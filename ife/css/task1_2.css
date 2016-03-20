@@ -40,12 +40,16 @@ div #footer{
 	color: white;
 	text-align: center;
 	margin: 0;
+	padding: auto;
+	position: relative;
 }
 div #footer small{
 	/*display: table-cell;*/
-	margin-top: auto;
-	margin-bottom: auto;
-	vertical-align: middle;
+	margin: 0;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	/*vertical-align: middle;*/
 	/*text-align: center;*/
 
 }
