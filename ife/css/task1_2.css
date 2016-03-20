@@ -36,22 +36,23 @@ div #content {
 div #footer{
 	background-color: black;
 	width: 100%;
-	height: 60px;
+	/*height: 60px;*/
 	color: white;
 	text-align: center;
 	margin: 0;
-	padding: auto;
+	padding: 20px 0;
 	position: relative;
 }
 div #footer small{
 	/*display: table-cell;*/
 	margin: 0;
-	position: absolute;
+	/*position: absolute;
 	left: 50%;
-	top:50%;
+	top:50%;*/
+
+	/*height: 20px;*/
 	/*vertical-align: middle;*/
 	/*text-align: center;*/
-
 }
 
 div #head ul {
