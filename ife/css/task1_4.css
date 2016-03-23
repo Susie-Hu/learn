@@ -1,0 +1,36 @@
+body{
+	margin: 0;
+}
+#container{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	width: 60%;
+	height: 90%;
+	display: block;
+	text-align: center;
+}
+#rectangle{
+	width: 400px;
+	height: 200px;
+	background-color: #ccc;
+	display: block;
+	margin: 200px auto;
+	position: relative;
+}
+.circle{
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	background-color: #fc0;
+}
+#circle1{
+	position: relative;
+	border-radius: 0 0 100% 0;
+}
+#circle2{
+	position: relative;
+	border-radius: 100% 0 0 0;
+	left: 350px;
+	top: 100px;
+}
