@@ -200,7 +200,19 @@ div #article5 div p {
 	position: absolute;
 }
 */
-
+div #article5 div[class] {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #999;
+	height: 32px;
+	width: 0;
+	display: inline;
+	margin: 10px 10px;
+}
+div #article5 h3{
+	font-size: 16px;
+	display: inline;
+}
 div #article5 table {
 	width: 100%;
 }
