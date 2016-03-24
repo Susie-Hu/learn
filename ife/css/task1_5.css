@@ -1,0 +1,242 @@
+body {
+	margin: 0;
+	display: block;
+}
+#container {
+	background-color: rgb(200,200,200);
+	width: 100%;
+	height: auto;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+div #head {
+	height: 60px;
+	width: 100%;
+	background-color: rgb(50,50,50);
+	position: relative;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+	margin: 0;
+	display: block;
+}
+div #content_box {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(200,200,200);
+	position: relative;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+div #content {
+	/*top: 60px;*/
+	width: auto;
+	height: 100%;
+	position: relative;
+	background-color: rgb(200,200,200);
+	padding: 0;
+	margin: 0 340px 0 0;
+	display: block;
+}
+div #article5 {
+	width: 300px;
+	height: auto;
+	position: relative;
+	float: right;
+	display: block;
+	margin: 0 20px;
+}
+
+div #footer{
+	background-color: black;
+	width: 100%;
+	/*height: 60px;*/
+	color: white;
+	text-align: center;
+	margin: 0;
+	padding: 20px 0;
+	position: relative;
+	clear: both;
+}
+div #footer small{
+	/*display: table-cell;*/
+	margin: 0;
+	/*position: absolute;
+	left: 50%;
+	top:50%;*/
+
+	/*height: 20px;*/
+	/*vertical-align: middle;*/
+	/*text-align: center;*/
+}
+
+div #head ul {
+	margin-right: 0;
+	/*width: 400px;*/
+	right: 0;
+	display: inline;
+	position: absolute;
+	/*margin-top: 50%;*/
+}
+div #head img{
+	width: 100px;
+	height: 90%;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 5%;
+}
+div #head ul li {
+	/*display: inline;*/
+	float: left;
+	width: 100px;
+
+}
+div #head ul li a:link{
+	color: white;
+}
+div #head ul li a:visited {
+	color: gray;
+}
+div #head ul li a:hover {
+	color: blue;
+}
+div #head ul li a:active {
+	color: red;
+}
+div .article {
+	background-color: white;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	display: block;
+	position: relative;
+	padding: 10px 10px 10px 10px;
+	/*padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;*/
+	/*top: 10px;*/
+}
+div .article img{
+	width: 300px;
+	height: 300px;
+}
+div #article2 ul {
+	list-style-type: none;
+}
+div #article3 div{
+	border-width: 1px;
+	border-style: solid;
+	width: 90px;
+	height: 101px;
+	padding: 5px 5px;
+	text-align: center;
+	margin:10px 10px;
+	position: relative;
+	float: left;
+}
+div #article3 div[class] {
+	float: none;
+	height: 0;
+	width: 0;
+	border-width: 0;
+	margin: 0;
+	padding: 0;
+}
+div #article3 div img{
+	width: 80px;
+	height: 70px;
+	position: relative;
+}
+div #article3 div p {
+	margin: 5px 0;
+}
+div #article4 table {
+	width: 100%;
+	border-collapse: collapse;
+}
+div #article4 table th {
+	color: white;
+	background-color: black;
+}
+div #article4 table .last {
+	background-color: gray;
+	color: black;
+}
+div #article4 ol {
+	color: black;
+	font-size: 20px;
+	font-family: fantasy;
+}
+/*div #article5 form {
+	text-align: center;
+	font-size: 14px;
+	color: black;
+	font-weight: bolder;
+}
+div #article5 .helpInfo {
+	color: gray;
+	font-weight: normal;
+	position: absolute;
+}
+div #article5 div {
+	height: 50px;
+}
+div #article5 div input {
+	text-align: left;
+	left: 50%;
+	position: absolute;
+}
+div #article5 div p {
+	text-align: right;
+	right: 50%;
+	position: absolute;
+}
+*/
+
+div #article5 table {
+	width: 100%;
+}
+div #article5 .helpInfo {
+	color: gray;
+	font-size: 14px;
+}
+/*div #article5 table .selfInfo {
+	width: 300px;
+	height: 300px;
+}*/
+div #article5 td textarea {
+	height: 40px;
+	width: 100%;
+}
+div #article5 table th {
+	text-align: right;
+}
+div #article5 table td {
+	text-align: left;
+}
+div #article5 button {
+	width: 100%;
+	text-align: center;
+	background-color: blue;
+	border-radius: 15px;
+	height: 40px;
+	font-size: 20px;
+	font-weight: bolder;
+	color: white;
+}
+.clear {
+	clear: both;
+	float: none;
+}
+
+
+
+
