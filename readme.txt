@@ -12,3 +12,5 @@ git commit -m “comment” filename
 git remote add origin https://github.com/Susie-Hu/learn.git
 git push -u origin master
 git push origin master
+
+git diff filename
