@@ -248,7 +248,7 @@ body {
 #downLeft img{
 	width: 40%;
 	float: right;
-	margin: 10px 0 10x 10px;
+	margin: 10px 0 10px 10px;
 	position: relative;
 	display: block;
 }
@@ -307,6 +307,8 @@ body {
 	list-style-image: url("../img/shape_triangle_equilateral_16px_1075074_easyicon.net.png");
 	line-height: 2em;
 	text-align: justify;
+	margin: 20px 0 0 0;
+	padding: 20px 0 20px 40px;
 }
 #shouye ul li{
 	text-align: justify;
