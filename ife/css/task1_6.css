@@ -44,6 +44,9 @@ body {
 	margin: 0;
 	padding: 20px 0;
 }
+#upHalf{
+	margin: 0 0 40px 0;
+}
 #upHalf #img{
 	height: 33%;
 	width: 66%;
