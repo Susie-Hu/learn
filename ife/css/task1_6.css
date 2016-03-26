@@ -217,12 +217,18 @@ body {
 	font-size: 200%;
 	color: #484848;
 }
-#downHalf h1:first-letter{
+#downHalf h1 > span{
+	font-size: 3em;
+	color: #cccc33;
+	font-style: italic;
+}
+/*#downHalf h1:first-letter{
 	font-size: 300%;
 	color: #cccc33;
-}
+}*/
 #downHalf h2{
 	color: #484848;
+
 }
 #downLeft #mainText{
 	margin: 0;
