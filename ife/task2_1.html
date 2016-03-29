@@ -25,7 +25,10 @@ function getvalue() {
   //获取span元素
   var target=document.getElementById("aqi-display");
   //target=text
-  //将input元素的value赋值给span元素的innerHTML（文本）
+  //当input非空的时候，将input元素的value赋值给span元素的innerHTML（文本）
+  if (text.trim() == '') {
+    return;
+  }
   target.innerHTML=text;
   //document.write(text)
   //document.write(target)
