@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <h3>污染城市列表</h3>
+  <ul id="aqi-list">
+<!--   
+    <li>第一名：福州（样例），10</li>
+  	<li>第二名：福州（样例），10</li> -->
+  </ul>
+
+<script type="text/javascript">
+
+var aqiData = [
+  ["北京", 90],
+  ["上海", 50],
+  ["福州", 10],
+  ["广州", 50],
+  ["成都", 90],
+  ["西安", 100]
+];
+
+(function () {
+
+  /*
+  在注释下方编写代码
+  遍历读取aqiData中各个城市的数据
+  将空气质量指数大于60的城市显示到aqi-list的列表中
+  */
+  //获取id值为id的元素
+  function $$(id){
+    var obj = document.getElementById(id);
+    return obj;
+  }
+  //给pid增加子元素cid，cid的文本内容是txt
+  function addchild(pid,cid,txt){
+    var pobj = $$(pid);
+    var cobj = document.createElement("li");
+    cobj.id = cid;
+    cobj.innerHTML = txt;
+    pobj.appendChild(cobj);
+  }
+  //删除pid的子元素cid
+  function removechild(pid,cid){
+    $$(pid).removeChild($$(cid));
+  }
+
+  for (var i = aqiData.length - 1; i >= 0; i--) {
+    //判断值大于60的时候，给ul添加子元素进行显示
+    if (aqiData[i][1] > 60) {
+      var text = aqiData[i][0] + ',' + aqiData[i][1];
+      id = aqiData.length - i;
+      addchild("aqi-list",id,text);
+    }
+    
+  }
+
+})();
+
+</script>
+</body>
+</html>

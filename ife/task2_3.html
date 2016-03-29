@@ -1,0 +1,156 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 15</title>
+  </head>
+<body>
+
+  <ul id="source">
+    <li>北京空气质量：<b>90</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+  </ul>
+
+  <ul id="resort">
+    <!-- 
+    <li>第一名：北京空气质量：<b>90</b></li>
+    <li>第二名：北京空气质量：<b>90</b></li>
+    <li>第三名：北京空气质量：<b>90</b></li>
+     -->
+
+  </ul>
+
+  <button id="sort-btn">排序</button>
+
+<script type="text/javascript">
+
+/**
+ * getData方法
+ * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+ * 返回一个数组，格式见函数中示例
+ */
+ //通过id查找元素
+ function $$(id){
+  var obj = document.getElementById(id);
+  return obj;
+ }
+ //创建元素
+ function cc(tagName){
+  var obj = document.createElement(tagName)
+  return obj;
+}
+//给id为pid的标签添加id为cid的cTagName子标签，子标签的内容为txt。其中，如果cid为空，则不给子元素设置id值。
+function addchild(pid,cid,txt,cTagName){
+    var pobj = $$(pid);
+    var cobj = document.createElement(cTagName);
+    if (cid.toString() != '') {
+      cobj.id = cid;
+    }
+    cobj.innerHTML = txt;
+    pobj.appendChild(cobj);
+  }
+function getData() {
+  /*
+  coding here
+  */
+  var data = new Array();
+  var ul = $$("source");
+  var li = ul.getElementsByTagName("li");
+  for (var i = 0; i < li.length; i++) {
+    //获取城市的名字，使用substr切割字符串
+    var city = li[i].innerText.substr(0,2);
+    //alert("innerText"+li[i].innerText);
+    //alert("innerHTML"+li[i].innerHTML);
+    //得到li元素下的b元素对象的集合。
+    var b = li[i].getElementsByTagName("b");
+    //alert(b);
+    //b是列表，一定要在b后面添加[0]
+    var score = b[0].innerText;
+    //alert(score);
+    //新建一个数组，组合城市和分值，作为data的一个值。
+    var temp = new Array(2);
+    temp[0] = city;
+    temp[1] = score;
+    data[i] = temp;
+  }
+  /*
+  data = [
+    ["北京", 90],
+    ["北京", 90]
+    ……
+  ]
+  */
+
+  return data;
+
+}
+
+/**
+ * sortAqiData
+ * 按空气质量对data进行从小到大的排序
+ * 返回一个排序后的数组
+ */
+function sortAqiData(data) {
+  for (var i = 0; i < data.length -1; i++) {
+    min_flag = i;
+    min_score = data[i][1];
+    for (var j = i+1; j < data.length; j++) {
+      if (min_score > data[j][1]) {
+        min_flag = j;
+        min_score = data[j][1];
+      }
+      //将此轮最小的和位于i的地方的值互换
+    }
+      temp_city = data[i][0];
+      temp_score = data[i][1];
+      data[i][1] = data[min_flag][1];
+      data[i][0] = data[min_flag][0];
+      data[min_flag][0] = temp_city;
+      data[min_flag][1] = temp_score;
+      //alert(i+":"+data[i][1]); 
+  }
+  //alert(data+data.length)
+  return data
+}
+
+/**
+ * render
+ * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+ * 格式见ul中的注释的部分
+ */
+function render(data) {
+  for (var i = 0; i <data.length; i++) {
+    txt = data[i][0] + "空气质量：";
+    addchild("resort",i,txt,'li');
+    //alert(i+"  :"+data[i][1]);
+    addchild(i,'',data[i][1],'b');
+  }
+}
+
+function btnHandle() {
+  var aqiData = getData();
+  aqiData = sortAqiData(aqiData);
+  //alert(aqiData);
+  render(aqiData);
+}
+
+
+function init() {
+
+  // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
+  document.getElementById("sort-btn").onclick = function() {
+    btnHandle();
+  }
+
+}
+
+init();
+
+</script>
+</body>
+</html>
