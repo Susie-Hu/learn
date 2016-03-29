@@ -1,0 +1,111 @@
+body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+#wrapper{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+#head{
+	width: 100%;
+	height: 80px;
+	background-color: red;
+	position: relative;
+}
+#container{
+	width: 100%;
+	position: relative;
+}
+#time_of_new_life img{
+	width: 100%;
+	position: relative;
+}
+#textbox{
+	position: absolute;
+	top: 25%;
+	left: 10%;
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+#textbox h1{
+	color: white;
+	font-weight: bolder;
+	font-size: 4em;
+	margin: 0;
+}
+#textbox p{
+	color:white;
+	font-size: 1.5em;
+	margin: 2% 0;
+	line-height: 1.5em;
+}
+#textbox a{
+	display: block;
+	width: 25%;
+	margin: 2% 0 0 0;
+	padding: 1% 0;
+	background-color: #cd5c5c;
+	color: white;
+	font-size: 2em;
+	text-decoration: none;
+	text-align: center;
+	/*vertical-align: middle;*/
+}
+#box {
+	width: 100%;
+	position: relative;
+	height: 20%;
+	display: block;
+	padding: 2% 10%;
+	text-align: center;
+}
+#box .icon{
+	float: left;
+	position: relative;
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+
+}
+.icon div{
+	padding: 0 10% 10% 10%;
+	margin: 10% 0 0 0;
+	border-width: 0 2px 0 0;
+	border-style: solid;
+	border-color: gray;
+	text-align: center;
+}
+#box1{
+	width: 100%;
+	background-color: #f0ffff;
+	color: #a9a9a9;
+	text-align: center;
+	padding: 2% 0;
+	margin: 0;
+}
+#box1 img{
+	padding: 2% 0;
+}
+#box1 p{
+	font-size: 3em;
+	padding: 0;
+	margin: 0;
+
+}
+#footer{
+	width: 100%;
+	background-color: black;
+	padding: 80px 0;
+	position: relative;
+	color: white;
+	text-align: center
+}
+.clear{
+	clear: both;
+	display: block;
+	float: none;
+}
