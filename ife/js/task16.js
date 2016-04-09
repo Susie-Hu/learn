@@ -30,12 +30,12 @@ window.onload = function(){
     aqiData["score"] = null;
     var cityobj = document.getElementById("aqi-city-input");
     var scoreobj = document.getElementById("aqi-value-input");
-    city = cityobj.value;
-    score = scoreobj.value;
+    city = cityobj.value.trim();
+    score = scoreobj.value.trim();
     // 待添加校验
     var regchinese = /[^\u0000-\u00FF]/
     var regNum = /^[0-9]*$/
-    if (regchinese.test(city)){
+    if (regchinese.test(city) && city != ''){
       aqiData["city"] = city;
       if (document.getElementById("cityErrorInfo")) {
         deleteErrorInfo(document.getElementById("cityErrorInfo"))
@@ -48,7 +48,7 @@ window.onload = function(){
         errorInfo(cityobj,"请输入中文城市名！","cityErrorInfo")
       }
     }
-    if (regNum.test(score)){
+    if (regNum.test(score) && score != ''){
       aqiData["score"] = score;
       if(document.getElementById("scoreErrorInfo")){
         deleteErrorInfo(document.getElementById("scoreErrorInfo"))
