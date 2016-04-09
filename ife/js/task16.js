@@ -162,7 +162,7 @@ window.onload = function(){
         btnList[btnList.length-1].onclick = function(){
           delBtnHandle(this);
         }
-        alert(btnList.length)
+        // alert(btnList.length)
       }
       
     }
