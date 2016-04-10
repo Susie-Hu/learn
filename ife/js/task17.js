@@ -87,9 +87,20 @@ window.onload = function(){
     div.setAttribute("value",value);
     div.onmouseover = function(){
       document.title = div.getAttribute("value");
+      var divInfo = document.createElement("div");
+      var txt = document.createTextNode("时间和指数： "+div.getAttribute("value"));
+      divInfo.appendChild(txt);
+      divInfo.style.textAlign = "center";
+      divInfo.style.color = "red";
+      divInfo.setAttribute("id","dateInfo");
+      divInfo.style.padding = 10;
+      var chart = document.getElementById("chart");
+      document.body.insertBefore(divInfo,chart);
     }
     div.onmouseout = function(){
       document.title = "task17";
+      var div = document.getElementById("dateInfo");
+      document.body.removeChild(div);
     }
     wrap.appendChild(div);
    }
