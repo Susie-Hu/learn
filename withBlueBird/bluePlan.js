@@ -85,7 +85,7 @@ window.onload = function(){
 				else{
 					row = tr.rowIndex;
 					newRow = table.insertRow(row);
-					alert(row)
+					// alert(row)
 					col1 = newRow.insertCell(0);
 					col2 = newRow.insertCell(1);
 					col1.setAttribute("colspan","2");
