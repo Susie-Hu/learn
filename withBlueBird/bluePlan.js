@@ -20,6 +20,7 @@ window.onload = function(){
 	    var td1 = document.createElement("td");
 	    var td2 = document.createElement("td");
 	    var td3 = document.createElement("td");
+	    var td4 = document.createElement("td");
 
 	    var txt1 = document.createTextNode(txt);
 	    var checkbox = document.createElement("input");
@@ -29,15 +30,22 @@ window.onload = function(){
 	    var btntxt = document.createTextNode("查询");
 	    btn.appendChild(btntxt);
 
-	    // btn.setAttribute("onclick",addBtnHandle1("this"));
+	    // 添加删除功能
+	    var div = document.createElement("div");
+	    div.setAttribute("style","background-color:red;;border-radius:50%;border:solid red 1px;display:inline-block");
+	    div.setAttribute("name","delete");
+	    var txt2 = document.createTextNode("X");
+	    div.appendChild(txt2);
 
 	    td1.appendChild(txt1);
 	    td2.appendChild(checkbox);
 	    td3.appendChild(btn);
+	    td4.appendChild(div);
 	    
 	    tr.appendChild(td1);
 	    tr.appendChild(td2);
 	    tr.appendChild(td3);
+	    tr.appendChild(td4);
 	    return tr
 	    // var table = document.getElementById("aqi-table");
 	    // table.appendChild(tr);
@@ -54,9 +62,17 @@ window.onload = function(){
 	    tr.appendChild(td);
 	    return tr
 	}
+	function packUpResponse(td){
+		tr = td.parentNode;
+		table = tr.parentNode;
+		table.removeChild(tr);
+	}
 
-	function packUpResponse(tr){
-		tr.parentNode.removeChild(tr);
+	function btnDelete(button){
+		td = button.parentNode;
+		tr = td.parentNode;
+		table = tr.parentNode;
+		table.removeChild(tr); 
 	}
 
 	// 渲染表格
@@ -105,26 +121,37 @@ window.onload = function(){
 		addData();
 		renderTable();
 	}
-	function addBtnCheck(button){
+	function btnCheck(button){
 		addData();
 		renderTable(button);
-
+		//给收起按钮添加点击事件
 		tr = button.parentNode.parentNode;
 		idResult = tr.getAttribute("id")+"Result";
 
-		packUp = document.getElementById(idResult);
+		packUpdr = document.getElementById(idResult);
+		//怎么获取packUp行的button
+		packUp = packUpdr.cells[1];
 		packUp.onclick = function(){
 			packUpResponse(this);
+			// btnDelete(this);
 		}
 	}
 	function init(){
 		var btn = document.getElementById("add");
 		btn.onclick = function (){
 			addBtnHandle();
+			//给查询按钮添加点击事件
 			var btnList = document.getElementsByName("check");
 			if (btnList.length > 0){
         		btnList[btnList.length-1].onclick = function(){
-        			addBtnCheck(this);
+        			btnCheck(this);
+        		}
+			}
+			//给删除按钮添加点击事件
+			var delList = document.getElementsByName("delete");
+			if (delList.length > 0){
+        		delList[delList.length-1].onclick = function(){
+        			btnDelete(this);
         		}
 			}
       }
