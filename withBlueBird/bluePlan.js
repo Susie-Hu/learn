@@ -46,6 +46,11 @@ window.onload = function(){
 	    var td3 = document.createElement("td");
 	    var td4 = document.createElement("td");
 
+	    td1.setAttribute("class","td0");
+	    td2.setAttribute("class","td1");
+	    td3.setAttribute("class","td2");
+	    td4.setAttribute("class","td3");
+
 	    var txt1 = document.createTextNode(txt);
 	    var checkbox = document.createElement("input");
 	    checkbox.setAttribute("type","checkbox");
@@ -107,10 +112,10 @@ window.onload = function(){
 	}
 
 	// 渲染表格
-	function renderTable(result){
+	function renderTable(button){
 		var table = document.getElementById("dataTable");
-		//添加数据
-		if ( result == undefined ){
+		//添加数据时，没有传递参数
+		if ( button == undefined ){
 			if (data != ''){
 				var id = document.getElementsByName("check").length;
 				table.appendChild(addDataRow(data,id));
@@ -120,34 +125,40 @@ window.onload = function(){
 		}
 		//添加查询结果
 		else{
-			if ( data != ''){
-				// table.appendChild(addDataRow(data));
-				//添加响应
-				// table.insertBefore(obj,addResponseRow());
-				tr = button.parentNode.parentNode;
-				idResult = tr.getAttribute("id")+"Result";
-				//如果存在result,则替换txt，负责新建一行
-				if (document.getElementById(idResult)){
-					result = document.getElementById(idResult);
-					//添加result内容
-					result.cells[0].innerHTML = result;
-				}
-				else{
-					row = tr.rowIndex;
-					newRow = table.insertRow(row);
-					// alert(row)
-					col1 = newRow.insertCell(0);
-					col2 = newRow.insertCell(1);
-					col1.setAttribute("colspan","2");
-					col1.innerHTML = data;
-					var btn = document.createElement("button");
-					var txt = document.createTextNode("收起");
-					btn.setAttribute("name","Packup")
-					btn.appendChild(txt);
-					col2.appendChild(btn);
-					newRow.setAttribute("id",idResult);
-				}
+			// if ( data != ''){
+			// table.appendChild(addDataRow(data));
+			//添加响应
+			// table.insertBefore(obj,addResponseRow());
+			// 判断结果行是否存在，存在修改文本，不存在新建一行
+			tr = button.parentNode.parentNode;
+			idResult = tr.getAttribute("id")+"Result";
+			//如果存在result,则替换txt，负责新建一行
+			if (document.getElementById(idResult)){
+				result = document.getElementById(idResult);
+				//添加result内容
+				result.cells[0].innerHTML = "结果：";
 			}
+			else{
+				//新建一行，但是为什么win下的chrome不支持rowIndex呢
+				row = tr.rowIndex + 1;
+				newRow = table.insertRow(row);
+				// row的值一直为-1
+				// alert(row)
+				col1 = newRow.insertCell(0);
+				col2 = newRow.insertCell(1);
+				idResultTxt = idResult+"Txt"
+				col1.setAttribute("colspan","2");
+				col1.setAttribute("id",idResultTxt);
+				col1.innerHTML = "结果：";
+				var btn = document.createElement("button");
+				var txt = document.createTextNode("收起");
+				btn.setAttribute("name","Packup")
+				btn.appendChild(txt);
+				col2.appendChild(btn);
+				newRow.setAttribute("id",idResult);
+				newRow.setAttribute("class","dateResult");
+			}
+			// }
 		}
 		
 	}
@@ -157,8 +168,8 @@ window.onload = function(){
 	}
 	function btnCheck(button){
 		//addData();
-		// renderTable(button);
-		getResult();
+		renderTable(button);
+		// getResult();
 		// $(function(){
 		// 	$.ajax({
 		// 		type:"GET",
@@ -169,6 +180,12 @@ window.onload = function(){
 		//给收起按钮添加点击事件
 		tr = button.parentNode.parentNode;
 		idResult = tr.getAttribute("id")+"Result";
+		idResultTxt = idResult + "Txt"
+
+		// 给结果填充内容
+		// $('#'+idResultTxt).load('./json/1.json');
+		css_locator = '#'+idResultTxt;
+		$(css_locator).load('./json/1.json');
 
 		packUpdr = document.getElementById(idResult);
 		//怎么获取packUp行的button

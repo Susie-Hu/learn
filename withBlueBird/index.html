@@ -3,13 +3,41 @@
 <head>
 	<meta charset="utf-8">
 	<title>bluePlan</title>
-	<style type="text/css" src="bluePlan.css"></style>
+	<!-- <style type="text/css" src="./bluePlan.css"></style> -->
 	<!-- <script type="text/javascript" src="jquery.js"></script> -->
-	<script type="text/javascript" src="bluePlan.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+	<script type="text/javascript" src="./jquery-2.2.3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./bluePlan.css">
+	<script type="text/javascript" src="./bluePlan.js"></script>
 </head>
 <body>
-	<label><input id="kw" tabindex="1"></input></label>
-	<button id="add">添加</button>
-	<table id = "dataTable"></table>
+	<div id="wrapper">
+		<div id="input">
+			<input id="kw" tabindex="1"></input>
+			<button id="add">添加</button>
+		</div>
+
+		<table id = "dataTable">
+			<!-- <tr id="0" class="dataRow">
+				<td>123</td>
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>
+					<button name="check">查询</button>
+				</td>
+				<td>
+					<div style="background-color:red;;border-radius:50%;border:solid red 1px;display:inline-block" name="delete">X</div>
+				</td>
+			</tr>
+			<tr id="0Result" class="dataResult">
+				<td id="0ResultTxt" colspan="2">结果：</td>
+				<td>
+					<button name="Packup">收起</button>
+				</td>
+			</tr> -->
+		</table>
+
+	</div>
 </body>
 </html>
