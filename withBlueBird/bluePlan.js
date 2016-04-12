@@ -12,6 +12,30 @@ window.onload = function(){
 	function readDataLine(fp){
 
 	}
+	//请求
+	var txtRes
+	function getResult(){
+		txtRes='';
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onload = function(){
+			if (xmlhttp.status >=200 && xmlhttp.status < 300 ||xmlhttp.status == 304){
+				txtRes = xmlhttp.responseText;
+				// renderTable(txtResult);
+				alert(txtRes);
+			}else{
+				alert("Request was unsuccessful:"+xhr.status);
+			}
+		}
+		xmlhttp.open("GET","./json/1.json",true);
+		xmlhttp.send();
+	}
+	// $(function(){
+	// 	$.ajax({
+	// 		type:"GET",
+	// 		url:"./json/1.json",
+	// 		success:renderTable($('#resText'));
+	// 	})
+	// })
 
 	function addDataRow(txt,id){
 	    var tr = document.createElement("tr");
@@ -73,12 +97,20 @@ window.onload = function(){
 		tr = td.parentNode;
 		table = tr.parentNode;
 		table.removeChild(tr); 
+		tr = button.parentNode.parentNode;
+		idResult = tr.getAttribute("id")+"Result";
+		//如果查询结果存在，删除这条查询时，也要同时删除结果
+		if (document.getElementById(idResult)){
+			tr = document.getElementById(idResult);
+			tr.parentNode.removeChild(tr);
+		}
 	}
 
 	// 渲染表格
-	function renderTable(button){
+	function renderTable(result){
 		var table = document.getElementById("dataTable");
-		if ( button == undefined ){
+		//添加数据
+		if ( result == undefined ){
 			if (data != ''){
 				var id = document.getElementsByName("check").length;
 				table.appendChild(addDataRow(data,id));
@@ -86,6 +118,7 @@ window.onload = function(){
 				// table.insertBefore(obj,addResponseRow());
 			}
 		}
+		//添加查询结果
 		else{
 			if ( data != ''){
 				// table.appendChild(addDataRow(data));
@@ -96,7 +129,8 @@ window.onload = function(){
 				//如果存在result,则替换txt，负责新建一行
 				if (document.getElementById(idResult)){
 					result = document.getElementById(idResult);
-					result.cells[0].innerHTML = data;
+					//添加result内容
+					result.cells[0].innerHTML = result;
 				}
 				else{
 					row = tr.rowIndex;
@@ -122,8 +156,16 @@ window.onload = function(){
 		renderTable();
 	}
 	function btnCheck(button){
-		addData();
-		renderTable(button);
+		//addData();
+		// renderTable(button);
+		getResult();
+		// $(function(){
+		// 	$.ajax({
+		// 		type:"GET",
+		// 		url:"./json/1.json",
+		// 		success:renderTable($('#resText'));
+		// 	})
+		// })
 		//给收起按钮添加点击事件
 		tr = button.parentNode.parentNode;
 		idResult = tr.getAttribute("id")+"Result";
