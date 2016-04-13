@@ -29,7 +29,7 @@ window.onload = function(){
             }
         };
     }
-
+    var rota = 0;
     function doGo(){
         // var chess = document.getElementsByName("chess")[0];
         chess = getChess();
@@ -58,23 +58,26 @@ window.onload = function(){
         }
     }
 
-    function doLef(){
-         //var chess = document.getElementsByClassName("chess")[0];
-        chess = getChess();
-        flag = chess.style.transform;
-        //alert(flag);
-        chess.style.transform = "rotate(-90deg)";
-    }
-    function doRig(){
-        // var chess = document.getElementsByName("chess")[0];
-        chess = getChess();
-        chess.style.transform = "rotate(90deg)";
-    }
-    function doBac(){
-        // var chess = document.getElementsByName("chess")[0];
-        chess = getChess();
-        chess.style.transform = "rotate(180deg)";
-    }
+    //function doLef(){
+    //     //var chess = document.getElementsByClassName("chess")[0];
+    //    chess = getChess();
+    //    flag = chess.style.transform;
+    //    //alert(flag);
+    //    rota -= 90;
+    //    chess.style.transform = "rotate("+rota+"deg)";
+    //}
+    //function doRig(){
+    //    // var chess = document.getElementsByName("chess")[0];
+    //    chess = getChess();
+    //    rota += 90;
+    //    chess.style.transform =  "rotate("+rota+"deg)";
+    //}
+    //function doBac(){
+    //    // var chess = document.getElementsByName("chess")[0];
+    //    chess = getChess();
+    //    rota +=180;
+    //    chess.style.transform = "rotate("+rota+"deg)";
+    //}
     // 定义执行事件
     function btnGo(){
         getCommand();
@@ -86,13 +89,16 @@ window.onload = function(){
             switch(command){
                 case "GO":doGo();
                 break;
-                case "TUN LEF":doLef();
+                case "TUN LEF":rota -= 90;//doLef();
                 break;
-                case "TUN RIG":doRig();
+                case "TUN RIG":rota += 90;//doRig();
                 break;
-                case "TUN BAC":doBac();
+                case "TUN BAC":rota += 180;//doBac();
                 break;
             }
+            rota = rota%360;
+            chess = getChess();
+            chess.style.transform = "rotate("+rota+"deg)";
         }
     }
     //生成棋盘
