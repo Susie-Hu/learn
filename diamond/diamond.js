@@ -43,6 +43,7 @@ window.onload = function(){
             //修改现在的棋子
             chess.name = "notChess";
             chess.className = "uncheck";
+            chess.style.transform = "rotate(0deg)";
 
             var row = chessId.slice(0,2);
             var col = chessId.slice(-1);
