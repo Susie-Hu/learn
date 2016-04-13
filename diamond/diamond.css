@@ -1,0 +1,38 @@
+/*设置table的边框单边框*/
+table{
+    border-collapse: collapse;
+}
+/*设置棋盘的样式*/
+.uncheck{
+    width: 40px;
+    height: 40px;
+    background-color: aliceblue;
+    border-color: black;
+    border-style:solid;
+    border-width: 1px;
+}
+/*设置棋子的样式*/
+/*不同的颜色,可以设置背景图片,背景图片可以操作旋转*/
+.check{
+    width: 48px;
+    height: 48px;
+    background-image: url("./chess50.png");
+    background-color: brown;
+    border-color: black;
+    border-style:solid;
+    border-width: 1px;
+    /*background-repeat: fixed!important;*/
+    background-repeat: no-repeat;
+    /*rotation-point:50% 50%;*/
+    /*transform:rotate(90deg);*/
+}
+/*设置棋盘边上数字的样式*/
+.labelBox{
+    text-align: center;
+    vertical-align: middle;
+}
+/*设置执行按钮的样式*/
+#go{
+    background-color: deepskyblue;
+    color: white;
+}
