@@ -62,7 +62,7 @@ window.onload = function(){
          //var chess = document.getElementsByClassName("chess")[0];
         chess = getChess();
         flag = chess.style.transform;
-        alert(flag);
+        //alert(flag);
         chess.style.transform = "rotate(-90deg)";
     }
     function doRig(){
