@@ -1,0 +1,92 @@
+/*设置table的边框单边框*/
+table{
+    border-collapse: collapse;
+}
+/*设置棋盘的样式*/
+.uncheck{
+    width: 40px;
+    height: 40px;
+    background-color: aliceblue;
+    border-color: black;
+    border-style:solid;
+    border-width: 1px;
+    transform: rotate(0deg);
+}
+/*设置棋子的样式*/
+/*不同的颜色,可以设置背景图片,背景图片可以操作旋转*/
+.check{
+    width: 48px;
+    height: 48px;
+    background-image: url("./chess50.png");
+    background-color: brown;
+    border-color: black;
+    border-style:solid;
+    border-width: 1px;
+    /*background-repeat: fixed!important;*/
+    background-repeat: no-repeat;
+    /*rotation-point:50% 50%;*/
+    /*transform:rotate(90deg);*/
+}
+/*设置棋盘边上数字的样式*/
+.labelBox{
+    text-align: center;
+    vertical-align: middle;
+}
+/*设置执行按钮的样式*/
+#go{
+    background-color: deepskyblue;
+    color: white;
+}
+#ol {
+    position: absolute;
+    background-color: antiquewhite;
+    width: 20px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: none;
+}
+#li{
+    height: 100px;
+    width: 40px;
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0 0 0 5px;
+    text-align: left;
+    resize: none;
+    border: none;
+    line-height: 20px;
+    font-size: 14px;
+}
+#commands{
+    margin: 0;
+    padding: 0 0 0 28px;
+    width: 430px;
+    height: 100px;
+    background-color: black;
+    color: white;
+    border: none;
+    line-height: 20px;
+    font-size: 14px;
+}
+.errorInfo{
+    background-color: red;
+    height: 20px;
+    position: absolute;
+    width: 20px;
+    opacity: 0.3;
+    display: block;
+    /*bottom: 80px;*/
+    float: left;
+}
+#error{
+    height: 100px;
+    width:20px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0;
+    padding:0;
+    position: relative;
+}
