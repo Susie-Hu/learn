@@ -1,0 +1,55 @@
+body {
+	background-color: #000033;
+}
+#wrapper{
+	width: 1000px;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	left: 50%;
+	margin-left: -500px;
+}
+.ui-select{
+	height: 100px;
+	width: auto;
+}
+#select {
+	float: right;
+	position: relative;
+	width: 80px;
+	height: 30px;
+	border-radius: 10%;
+	font-family: "Microsoft YaHei,FangSong";
+	text-align: center;
+	opacity: 1;
+	margin: 0;
+	padding: 0;
+	display: block;
+	top: 50px;
+	margin-top: -15px;
+}
+#imgContainer{
+	background-color: white;
+	margin: 0;
+	padding: 0;
+	border-style: solid;
+	border-radius: 5%;
+	border-width: 2px;
+	border-color: yellow;
+	width: 900px;
+	height: 600px;
+	position: relative;
+	left: 50%;
+	margin-left: -400px;
+}
+.img {
+	border-style: solid;
+	border-radius: 5%;
+	border-width: 1px;
+	border-color: yellow;
+	float: left;
+	position: relative;
+	margin: 5px;
+	padding: 0px;
+	/*background-image: url("4.jpg");*/
+}
